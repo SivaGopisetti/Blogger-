@@ -10,26 +10,57 @@
           </div>
           <div class="row align-items-center">
             <div class="col mt-4">
-              <input type="text" class="form-control" placeholder="First Name">
+              <input type="text" class="form-control" formControlName="name"placeholder="First Name">
+              <span class="text-danger"
+              *ngIf="(registerFormControl.name.touched || submitted) && registerFormControl.name.errors?.required">
             </div>
           </div>
           <div class="row align-items-center mt-4">
             <div class="col">
-              <input type="email" class="form-control" placeholder="Last Name">
+              <input type="text" class="form-control" formControlName="name" placeholder="Last Name">
+              <span class="text-danger"
+              *ngIf="(registerFormControl.name.touched || submitted) && registerFormControl.name.errors?.required">
+              Name is required
+          </span> 
             </div>
           </div>
           <div class="row align-items-center mt-4">
             <div class="col">
-              <input type="text" class="form-control" placeholder="Email">
+              <input type="text" class="form-control" formControlName="email" placeholder="Email">
+              <span class="text-danger"
+              *ngIf="(registerFormControl.email.touched || submitted) && registerFormControl.email.errors?.required">
+              Name is required
+          </span>
+          <span class="text-danger"
+          *ngIf="registerFormControl.email.touched && registerFormControl.email.errors?.email">
+          Enter a valid email address
+      </span>
             </div>
           </div>
           
           <div class="row align-items-center mt-4">
             <div class="col">
-              <input type="password" class="form-control" placeholder="Password">
+              <input type="password" class="form-control" formControlName="password" placeholder="Password">
             </div>
+            <span class="text-danger"
+            *ngIf="(registerFormControl.password.touched || submitted) && registerFormControl.password.errors?.required">
+            Password is required
+        </span>
+        <span class="text-danger"
+            *ngIf="registerFormControl.password.touched && registerFormControl.password.errors?.invalidPassword">
+            Password should have minimum 8 characters, at least 1 uppercase letter, 1 lowercase
+            letter and 1 number
+        </span>
             <div class="col">
               <input type="password" class="form-control" placeholder="Confirm Password">
+              <span class="text-danger"
+              *ngIf="(registerFormControl.confirmPassword.touched || submitted)&& registerFormControl.confirmPassword.errors?.required">
+              Confirm Password is required
+          </span>
+          <span class="text-danger"
+              *ngIf="registerFormControl.confirmPassword.touched && registerFormControl.confirmPassword.errors?.passwordMismatch">
+              Passwords doesnot match
+          </span>
             </div>
           </div>
           <div class="row justify-content-start mt-4">
