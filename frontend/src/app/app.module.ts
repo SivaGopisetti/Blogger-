@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './MyComponents/login/login.component';
 import { NavbarComponent } from './MyComponents/navbar/navbar.component';
-import { RegisterComponent } from './MyComponents/register/register.component';
 import { AddBlogComponent } from './MyComponents/add-blog/add-blog.component';
+import { RegistrationComponent } from './MyComponents/registration/registration.component';
+import { ForgotPasswordComponent } from './MyComponents/forgot-password/forgot-password.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     NavbarComponent,
-    RegisterComponent,
-    AddBlogComponent
+    AddBlogComponent,
+    RegistrationComponent,
+    ForgotPasswordComponent,
+
   ],
   imports: [
     BrowserModule,
