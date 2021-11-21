@@ -8,6 +8,8 @@ import { NavbarComponent } from './MyComponents/navbar/navbar.component';
 import { AddBlogComponent } from './MyComponents/add-blog/add-blog.component';
 import { RegistrationComponent } from './MyComponents/registration/registration.component';
 import { ForgotPasswordComponent } from './MyComponents/forgot-password/forgot-password.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { ForgotPasswordComponent } from './MyComponents/forgot-password/forgot-p
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

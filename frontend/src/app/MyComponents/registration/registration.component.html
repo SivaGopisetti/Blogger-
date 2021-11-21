@@ -7,28 +7,34 @@
              <h1>Register</h1>
             </div>
           </div>
+          <form [formGroup]="registrationForm">
           <div class="row align-items-center">
             <div class="col mt-4">
-              <input type="text" class="form-control" placeholder="First Name">
+              <input type="text" formControlName="firstname" class="form-control" placeholder="First Name">
+              <span class="text-danger" *ngIf="registrationForm.controls['firstname'].dirty && registrationForm.hasError('requried',firstname')">*firstname is Reuried</span>
             </div>
           </div>
           <div class="row align-items-center mt-4">
             <div class="col">
-              <input type="email" class="form-control" placeholder="Last Name">
+              <input type="text" formControlName="lastname" class="form-control" placeholder="Last Name">
+              <span class="text-danger" *ngIf="registrationForm.controls['lastname'].dirty && registrationForm.hasError('requried',lastname')">*lastname is Reuried</span>
             </div>
           </div>
           <div class="row align-items-center mt-4">
             <div class="col">
-              <input type="text" class="form-control" placeholder="Email">
+              <input type="email" formControlName="email" class="form-control" placeholder="Email">
+              <span class="text-danger" *ngIf="registrationForm.controls['email'].dirty && registrationForm.hasError('requried',email')">*Email Id is Reuried</span>
             </div>
           </div>
           
           <div class="row align-items-center mt-4">
             <div class="col">
-              <input type="password" class="form-control" placeholder="Password">
+              <input type="password"  formControlName="password" class="form-control" placeholder="Password">
+              <span class="text-danger" *ngIf="registrationForm.controls['password'].dirty && registrationForm.hasError('requried',password')">*password is Reuried</span>
             </div>
             <div class="col">
-              <input type="password" class="form-control" placeholder="Confirm Password">
+              <input type="password" formControlName="conformPassword"class="form-control" placeholder="Confirm Password">
+              <span class="text-danger" *ngIf="registrationForm.controls['conformPassword'].dirty && registrationForm.hasError('requried',conformPassword')">*conformPassword is Reuried</span>
             </div>
           </div>
           <div class="row justify-content-start mt-4">
@@ -40,8 +46,9 @@
                 </label>
               </div>
 
-              <button class="btn btn-primary mt-4">Submit</button>
+              <button class="btn btn-primary mt-4" type="submit" [disabled]="!registrationForm.valid">Submit</button>
             </div>
+          </form>
           </div>
         </div>
       </div>

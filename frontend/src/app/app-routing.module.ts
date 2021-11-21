@@ -25,7 +25,7 @@ const routes: Routes = [
     component:AddBlogComponent
   },
   {
-    path:"forgot-pass",
+    path:"forgot-password",
     component:ForgotPasswordComponent
   },
 

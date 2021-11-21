@@ -1,26 +1,26 @@
 <div class="content">
-    <div class="text">
-      Login 
+  <div class="text">Login</div>
+  <form action="#" [formGroup="loginForm"]>
+    <div class="field">
+      <input type="email" formControlName="email" required />
+      <span class="fas fa-user"></span>
+      <label>Email or Phone</label>
+      <span class="text-danger" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('requried',email')">*Email Id is Reuried</span>
+
     </div>
-    <form action="#">
-      <div class="field">
-        <input type="text" required>
-        <span class="fas fa-user"></span>
-        <label>Email or Phone</label>
-      </div>
-      <div class="field">
-        <input type="password" required>
-        <span class="fas fa-lock"></span>
-        <label>Password</label>
-      </div>
-      <div class="forgot-pass">
-        <a routerLink="forgot-pass">Forgot Password?</a>
-      </div>
-      <button>Sign in</button>
-      <div class="sign-up">
-        Not a member?
-        <a routerLink="registration">Registration now</a>
-      </div>
-    </form>
+    <div class="field">
+      <input type="password" required />
+      <span class="fas fa-lock"></span>
+      <label>Password</label>
+      <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('requried',password')">*Password is Reuried</span>
+    </div>
+    <div class="forgot-pass">
+      <a routerLink="forgot-password">Forgot Password?</a>
+    </div>
+    <button type="submit" [disabled]="!loginForm.valid">Sign in</button>
+    <div class="sign-up">
+      Not a member?
+      <a routerLink="registration">Registration now</a>
+    </div>
+  </form>
 </div>
- 
