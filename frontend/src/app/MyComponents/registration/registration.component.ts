@@ -1,5 +1,6 @@
-import { Component, OnInit, ɵflushModuleScopingQueueAsMuchAsPossible } from '@angular/core';
-import { FormBuilder,FormGroup,Validators } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
+import { ApiService } from 'src/app/shared/api.service';
 
 @Component({
   selector: 'app-registration',
@@ -7,7 +8,7 @@ import { FormBuilder,FormGroup,Validators } from '@angular/forms';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-  firstName='';
+firstName='';
   lastName='';
   email='';
   password="";
@@ -20,7 +21,7 @@ export class RegistrationComponent implements OnInit {
     confirmPassword:true,
   }
 
-  constructor() { }
+  constructor(private http:HttpClient,private api:ApiSevices) { }
 
   ngOnInit():void {}
 
@@ -68,4 +69,10 @@ export class RegistrationComponent implements OnInit {
       this.validate(type);
     }
   }
-  
+ registrationForm(){
+   this.api.registration(this.registrationForm.value)
+   .subscribe(res=>){
+     alert{resizeBy.message}
+     this.registrationForm.reset()
+   }
+ }

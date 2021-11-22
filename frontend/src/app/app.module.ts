@@ -9,6 +9,8 @@ import { AddBlogComponent } from './MyComponents/add-blog/add-blog.component';
 import { RegistrationComponent } from './MyComponents/registration/registration.component';
 import { ForgotPasswordComponent } from './MyComponents/forgot-password/forgot-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DashboardComponent } from './MyComponents/dashboard/dashboard.component';
+
 
 
 
@@ -20,6 +22,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AddBlogComponent,
     RegistrationComponent,
     ForgotPasswordComponent,
+    DashboardComponent,
+   
 
   ],
   imports: [
