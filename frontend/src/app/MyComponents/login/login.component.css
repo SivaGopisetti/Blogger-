@@ -136,3 +136,7 @@ button:focus {
 .b-btn i {
   color: gray;
 }
+.text-red-500{
+  color: red;
+  font-size: 10px;
+}

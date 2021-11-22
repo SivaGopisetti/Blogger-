@@ -8,30 +8,42 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public loginForm !:FormGroup;
+  email="";
+  password="";
+  valid={
+    email:true,
+    password:true,
+  };
 
-  constructor(private formBuilder:FormBuilder) { }
+ 
 
-  ngOnInit():void {
-    this.loginForm=this.formBuilder.group({
-      email:['',Validators.required],
-      password:['',Validators.required]
-    })
-    
+  ngOnInit():void {}
+  validate(type: string): void {
+    const emailPattern = /\S+@\S+\.\S+/;
+
+    if (type === 'email') {
+      this.valid.email = emailPattern.test(this.email);
+    } else if(type === ('password')) {
+      if (this.password !== this.password) {
+        this.valid.password = false;
+      } else {
+        this.valid.password = true;
+      }
+    }
   }
-  singnUp(){
-    this
+
+  onKey(event: any, type: string) {
+    if (type === 'email') {
+      this.email = event.target.value;
+    } else if (type === 'password'){
+      this.password = event.target.value;
+    } 
+    this.validate(type);
   }
-
-
-
-  // // public loginForm:FormGroup
-  // constructor(){}
-
-  // ngOnInit:void  {
-  //   // this.loginForm = this.formBuilder.group({
-  //   //   email:['',Validators.required],
-  //   //   password:['',Validators.required]
-  //   // })
-  // }
 }
+    
+  
+ 
+
+
+

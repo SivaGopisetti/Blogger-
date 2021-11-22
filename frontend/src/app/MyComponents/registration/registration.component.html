@@ -4,38 +4,45 @@
           <div class="content">
             <div class="text">Sign Up</div>
             <form action="#" >
-              <form [formGroup]="registrationForm">
+              
               <div class="field">
-                <input type="text" formControlName="FirstName" required />
+                <input type="text"  name="firstName" required (keyup)="onKey($event, 'firstName')" /><br />
+                <p *ngIf="!valid.firstName" class="text-red-500 text-xs italic">your firstName is not valid</p>
                 <span class="fas fa-user"></span>
                 <label>First Name</label>
               </div>
               <div class="field">
-                <input type="text" formControlName="LastName" required />
+                <input type="text"  name="lastName"  required (keyup)="onKey($event, 'lastName')"/>
+                <p *ngIf="!valid.lastName" class="text-red-500 text-xs italic">your email is not valid</p>
                 <span class="fas fa-user"></span>
                 <label>Last Name</label>
               </div>
               <div class="field">
-                <input type="email" formControlName="email" required />
+                <input type="email"   name="email" placeholder="Email"required (keyup)="onKey($event, 'email')" />
+                <p *ngIf="!valid.email" class="text-red-500 text-xs italic">your email is not valid</p>
                 <span class="fas fa-user"></span>
-                <label>Email or Phone</label>
+                
               </div>
               <div class="field">
-                <input type="password" formControlName="password" required />
+                <input type="password"   name="password" required (keyup)="onKey($event, 'password')"/>
+                <br>
                 <span class="fas fa-lock"></span>
+                <br />
+                <p *ngIf="!valid.password" class="text-red-500 text-xs italic"><br/>your password is not valid</p>
                 <label>Password</label>
               </div>
               <div class="field">
-                <input type="password" formControlName="conformPassword" required />
+                <input type="confirmPassword"  name="confirmPassword" required (keyup)="onKey($event, 'confirmPassword')"/>
+                
                 <span class="fas fa-lock"></span>
-                <label>Conform Password</label>
+                <label>Confirm Password</label>
               </div>
               
-              <button type="submit" >Sign up</button>
+              <button  routerLink="" routerLinkActive="active">Sign up</button>
               <div class="sign-up">
               <a routerLink="/login">Alread Have Account? sign in </a>
               </div>
-              </form>
+              
             </form>
           </div>
       

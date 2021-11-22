@@ -12,13 +12,13 @@ body {
 body {
   display: grid;
   place-items: center;
-  background: #457cce;
+  background: #dde1e7;
   text-align: center;
 }
 .content {
   width: 330px;
   padding: 40px 30px;
-  background: #99b8e5;
+  background: #dde1e7;
   border-radius: 10px;
   box-shadow: -3px -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288);
 }
@@ -26,14 +26,15 @@ body {
   font-size: 33px;
   font-weight: 600;
   margin-bottom: 35px;
-  color: #595959;
+  color: #477cdf;
+  text-align: center;
 }
 .field {
   height: 50px;
   width: 100%;
   display: flex;
   position: relative;
-  margin:13px 0px;
+  margin:15px 0px;
 }
 .field:nth-child(2) {
   margin-top: 20px;
@@ -95,7 +96,7 @@ button {
   border: none;
   outline: none;
   cursor: pointer;
-  color: #595959;
+  color: #6636eb;
   box-shadow: 2px 2px 5px #babecc, -5px -5px 10px #ffffff73;
 }
 button:focus {
@@ -137,3 +138,8 @@ button:focus {
 .b-btn i {
   color: gray;
 }
+.text-red-500{
+  color: red;
+  font-size: 10px;
+}
+

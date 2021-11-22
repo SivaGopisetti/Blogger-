@@ -1,16 +1,15 @@
 <div class="content">
   <div class="text">Login</div>
   <form action="#" >
-    <form  [formGroup]="loginForm" ngSubmited>
     <div class="field">
-      <input type="email" formControlName="email" required />
-      <span class="fas fa-user"></span>
-      <label>Email or Phone</label>
-    
+      <input type="email" placeholder="Email" required (keyup)="onKey($event, 'email')"/>
 
+      <p *ngIf="!valid.email" class="text-red-500 text-xs italic">your email is not valid</p>
+  
     </div>
     <div class="field">
-      <input type="password" required />
+      <input type="password" required (keyup)="onKey($event, 'password')"/>
+      <p *ngIf="!valid.password" class="text-red-500 text-xs italic">your password is invalid</p>
       <span class="fas fa-lock"></span>
       <label>Password</label>
       
@@ -23,6 +22,5 @@
       Not a member?
       <a routerLink="/registration">Sign Up</a>
     </div>
-  </form>
   </form>
 </div>
