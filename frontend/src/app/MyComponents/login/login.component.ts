@@ -8,14 +8,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  public loginForm !:FormGroup;
 
-  public loginForm:FormGroup
-  constructor(private formBuilder :FormBuilder){}
+  constructor(private formBuilder:FormBuilder) { }
 
-  ngOnInit:void{
-    this.loginForm = this.formBuilder.group({
+  ngOnInit():void {
+    this.loginForm=this.formBuilder.group({
       email:['',Validators.required],
       password:['',Validators.required]
     })
+    
   }
+  singnUp(){
+    this
+  }
+
+
+
+  // // public loginForm:FormGroup
+  // constructor(){}
+
+  // ngOnInit:void  {
+  //   // this.loginForm = this.formBuilder.group({
+  //   //   email:['',Validators.required],
+  //   //   password:['',Validators.required]
+  //   // })
+  // }
 }

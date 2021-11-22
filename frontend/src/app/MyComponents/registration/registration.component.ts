@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Validators } from '@angular/forms';
+import { Component, OnInit, ɵflushModuleScopingQueueAsMuchAsPossible } from '@angular/core';
+import { FormBuilder,FormGroup,Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-registration',
@@ -8,19 +8,20 @@ import { Validators } from '@angular/forms';
 })
 export class RegistrationComponent implements OnInit {
 
-  this.registrationForm=this.formBuilder.group({
-    firstname:['',Validators.required],
-    lastname:['',Validators.required],
-    email:['',Validators.required],
-    password:['',Validators.required],
-    confirmPassword:['',Validators.required],
-
-  });
-
-  constructor() { }
+public registrationForm !:FormGroup
+  constructor(private formBuilder:FormBuilder) { }
 
   ngOnInit():void {
-    
+    this.registrationForm=this.formBuilder.group({
+      firstName:[''],
+      lastName:[""],
+      email:[''],
+      password:[''],
+      conformPassword:['']
+    })
   }
-
 }
+// Registration(){
+//   this.http.get<any>("")
+//   .subscribe()
+// }

@@ -1,26 +1,28 @@
 <div class="content">
   <div class="text">Login</div>
-  <form action="#" [formGroup="loginForm"]>
+  <form action="#" >
+    <form  [formGroup]="loginForm" ngSubmited>
     <div class="field">
       <input type="email" formControlName="email" required />
       <span class="fas fa-user"></span>
       <label>Email or Phone</label>
-      <span class="text-danger" *ngIf="loginForm.controls['email'].dirty && loginForm.hasError('requried',email')">*Email Id is Reuried</span>
+    
 
     </div>
     <div class="field">
       <input type="password" required />
       <span class="fas fa-lock"></span>
       <label>Password</label>
-      <span class="text-danger" *ngIf="loginForm.controls['password'].dirty && loginForm.hasError('requried',password')">*Password is Reuried</span>
+      
     </div>
     <div class="forgot-pass">
-      <a routerLink="forgot-password">Forgot Password?</a>
+      <a routerLink="/forgot-password">Forgot Password?</a>
     </div>
-    <button type="submit" [disabled]="!loginForm.valid">Sign in</button>
+    <button type="submit" >Sign In</button>
     <div class="sign-up">
       Not a member?
-      <a routerLink="registration">Registration now</a>
+      <a routerLink="/registration">Sign Up</a>
     </div>
+  </form>
   </form>
 </div>
