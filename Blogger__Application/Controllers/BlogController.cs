@@ -73,6 +73,75 @@ namespace Blog.Controller
                 return false;
             }
         }
+        [HttpDelete, Route("api/BlogController/DeletingUserByGivingIdClass")]
+        public bool DeletingUserByGivingIdClass(DeletingUserByGivingIdClass deletingUserByGivingId)
+        {
+            if (_register.DeleteUserById(deletingUserByGivingId))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //Update Content And Title
+        [HttpGet, Route("api/BlogController/UpdateContentAndTitleClass")]
+        public bool UpdateBlogWithContentAndTitle(UpdateContentAndTitleClass updateContentAndTitleClass)
+        {
+            if(_register.UpdateBlogWithContentAndTitle(updateContentAndTitleClass))
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //Deleting Blog Id
+        [HttpDelete, Route("api/BlogController/DeletingBlogByGivingIdClass")]
+        public bool DeleteBlogById(DeletingBlogByGivingIdClass deletingBlogByGivingIdClass)
+        {
+            if (_register.DeleteBlogById(deletingBlogByGivingIdClass))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //get blog by id
+        [HttpGet, Route("api/BlogController/GettingBlogByUsingIdClass")]
+        public bool GettingBlogById(GettingBlogByUsingIdClass gettingBlogByUsingIdclass)
+        {
+            if (_register.GettingBlogById(gettingBlogByUsingIdclass))
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //GettingUserDetailsOfTheBlogClass
+        [HttpGet, Route("api/BlogController/GettingUserDetailsOfTheBlogClass")]
+        public bool GettingUserDetails(GettingUserDetailsOfTheBlogClass gettingUserDetailsOfTheBlogClass)
+        {
+            if (_register.GettingUserDetails(gettingUserDetailsOfTheBlogClass))
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
     }
 }
 

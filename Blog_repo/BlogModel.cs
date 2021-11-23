@@ -30,5 +30,31 @@
         public string Title { get; set; }
         public string Content { get; set; }
     }
+    public class DeletingUserByGivingIdClass
+    {
+        public int id { get; set; }
+    }
+    public class UpdateContentAndTitleClass
+    {
+        public string Title { get; set; }
+        public string Content { get; set; }
+        public int Id { get; set; }
+    }
+    public class DeletingBlogByGivingIdClass
+    {
+        public int id { get; set; }
+    }
+    public class GettingBlogByUsingIdClass
+    {
+        //public string Title { get; set; }
+        //public string Content { get; set; }
+        public int id { get; set; }
+    }
+    public class GettingUserDetailsOfTheBlogClass
+    {
+
+        public int id { get; set; }
+
+    }
 
 }

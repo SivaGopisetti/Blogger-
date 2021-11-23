@@ -128,7 +128,170 @@ namespace Blog_repo
 
             try
             {
-                using (_command = new SqlCommand($"insert into dbo.InsertTableForTitleAndContent values('" + insertTitleAndContentClass.Title + "','"+insertTitleAndContentClass.Content+"')", _connection))
+                using (_command = new SqlCommand($"insert into dbo.InsertTableForTitleAndContent values('" + insertTitleAndContentClass.Title + "','" + insertTitleAndContentClass.Content + "')", _connection))
+                {
+                    if (_connection.State == System.Data.ConnectionState.Closed)
+                        _connection.Open();
+
+                    SqlDataReader reader = _command.ExecuteReader();
+
+                    {
+                        isSuccess = true;
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new BlogException(ex.Message, ex);
+            }
+            finally
+            {
+                if (_connection.State == System.Data.ConnectionState.Open)
+                    _connection.Close();
+            }
+            return isSuccess;
+        }
+        //deletingUserByGivingId
+        public bool DeleteUserById(DeletingUserByGivingIdClass deletingUserByGivingId)
+        {
+            bool isSuccess = false;
+
+            try
+            {
+                using (_command = new SqlCommand($"delete from dbo.RegistrationPage where Id='" + deletingUserByGivingId.id + "' ", _connection))
+                {
+                    if (_connection.State == System.Data.ConnectionState.Closed)
+                        _connection.Open();
+
+                    SqlDataReader reader = _command.ExecuteReader();
+
+                    {
+                        isSuccess = true;
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new BlogException(ex.Message, ex);
+            }
+            finally
+            {
+                if (_connection.State == System.Data.ConnectionState.Open)
+                    _connection.Close();
+            }
+            return isSuccess;
+        }
+        //updateContentAndTitleClass
+        public bool UpdateBlogWithContentAndTitle(UpdateContentAndTitleClass updateContentAndTitleClass)
+        {
+            bool isSuccess = false;
+
+            try
+            {
+                using (_command = new SqlCommand($"UPDATE dbo.InsertTableForTitleAndContent SET Title= '" + updateContentAndTitleClass.Title + "',Content='" + updateContentAndTitleClass.Content + "' WHERE  Id='" + updateContentAndTitleClass.Id + "'", _connection))
+                {
+                    if (_connection.State == System.Data.ConnectionState.Closed)
+                        _connection.Open();
+
+                    SqlDataReader reader = _command.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        if (updateContentAndTitleClass.Id.Equals(reader[3]))
+                        {
+                            isSuccess = true;
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new BlogException(ex.Message, ex);
+            }
+            finally
+            {
+                if (_connection.State == System.Data.ConnectionState.Open)
+                    _connection.Close();
+            }
+            return isSuccess;
+        }
+        //deletingBlogByGivingIdClass
+        public bool DeleteBlogById(DeletingBlogByGivingIdClass deletingBlogByGivingIdClass)
+        {
+            bool isSuccess = false;
+
+            try
+            {
+                using (_command = new SqlCommand($"delete from dbo.InsertTableForTitleAndContent where Id='" + deletingBlogByGivingIdClass.id + "' ", _connection))
+                {
+                    if (_connection.State == System.Data.ConnectionState.Closed)
+                        _connection.Open();
+
+                    SqlDataReader reader = _command.ExecuteReader();
+
+                    {
+                        isSuccess = true;
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new BlogException(ex.Message, ex);
+            }
+            finally
+            {
+                if (_connection.State == System.Data.ConnectionState.Open)
+                    _connection.Close();
+            }
+            return isSuccess;
+        }
+        //gettingBlogByUsingIdClass
+        public bool GettingBlogById(GettingBlogByUsingIdClass gettingBlogByUsingIdClass)
+        {
+            bool isSuccess = false;
+
+            try
+            {
+                using (_command = new SqlCommand("SELECT * FROM dbo.InsertTableForTitleAndContent where Id='" + gettingBlogByUsingIdClass.id + "' ", _connection))
+                {
+                    if (_connection.State == System.Data.ConnectionState.Closed)
+                        _connection.Open();
+
+                    SqlDataReader reader = _command.ExecuteReader();
+
+                    {
+                        isSuccess = true;
+
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new BlogException(ex.Message, ex);
+            }
+            finally
+            {
+                if (_connection.State == System.Data.ConnectionState.Open)
+                    _connection.Close();
+            }
+            return isSuccess;
+        }
+        public bool GettingUserDetails(GettingUserDetailsOfTheBlogClass gettingUserDetailsOfTheBlogClass)
+        {
+            bool isSuccess = false;
+
+            try
+            {
+                using (_command = new SqlCommand("SELECT * FROM dbo.InsertTableForTitleAndContent where Id='" + gettingUserDetailsOfTheBlogClass.id + "' ", _connection))
+                
                 {
                     if (_connection.State == System.Data.ConnectionState.Closed)
                         _connection.Open();
@@ -155,6 +318,4 @@ namespace Blog_repo
         }
 
     }
-
-
 }

@@ -12,5 +12,11 @@ namespace Blog_repo
         bool Login(LoginClass loginClass);
         bool ForgotPassword(ForgotPasswordClass forgotPasswordClass);
         bool InsertDataTitleAndContent(InsertTitleAndContentClass insertTitleAndContentClass);
+         bool DeleteUserById( DeletingUserByGivingIdClass deletingUserByGivingId);
+        bool UpdateBlogWithContentAndTitle(UpdateContentAndTitleClass updateContentAndTitleClass);
+        bool DeleteBlogById(DeletingBlogByGivingIdClass deletingBlogByGivingIdClass);
+        bool GettingBlogById(GettingBlogByUsingIdClass gettingBlogByUsingIdClass);
+        bool GettingUserDetails(GettingUserDetailsOfTheBlogClass gettingUserDetailsOfTheBlogClass);
+
     }
 }
