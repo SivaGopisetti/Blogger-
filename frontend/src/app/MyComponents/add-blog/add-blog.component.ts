@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-blog.component.css']
 })
 export class AddBlogComponent implements OnInit {
+  textarea:string=""
 
   constructor() { }
 
@@ -13,3 +14,8 @@ export class AddBlogComponent implements OnInit {
   }
 
 }
+// blogContent(){
+// console.log('sended'){
+//   this.textarea=""
+// }
+// }

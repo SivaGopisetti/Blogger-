@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/shared/api.service';
+// import { ApiService } from 'src/app/shared/api.service';
 
 @Component({
   selector: 'app-registration',
@@ -21,7 +21,7 @@ firstName='';
     confirmPassword:true,
   }
 
-  constructor(private http:HttpClient,private api:ApiSevices) { }
+  constructor() { }
 
   ngOnInit():void {}
 
@@ -69,10 +69,10 @@ firstName='';
       this.validate(type);
     }
   }
- registrationForm(){
-   this.api.registration(this.registrationForm.value)
-   .subscribe(res=>){
-     alert{resizeBy.message}
-     this.registrationForm.reset()
-   }
- }
+//  registrationForm(){
+//    this.api.registration(this.registrationForm.value)
+//    .subscribe(res=>){
+//      alert{resizeBy.message}
+//      this.registrationForm.reset()
+//    }
+//  }

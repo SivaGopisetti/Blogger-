@@ -18,6 +18,7 @@ body {
 .content {
   width: 330px;
   padding: 40px 30px;
+  margin-top: 80px;
   background: #dde1e7;
   border-radius: 10px;
   box-shadow: -3px -3px 7px #ffffff73, 2px 2px 5px rgba(94, 104, 121, 0.288);
