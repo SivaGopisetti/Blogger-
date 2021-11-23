@@ -3,37 +3,38 @@
     
           <div class="content">
             <div class="text">Sign Up</div>
-            <form action="#" >
+            <form action="#" [FormGroup="signUpForm"]>
               
               <div class="field">
-                <input type="text"  name="firstName" required (keyup)="onKey($event, 'firstName')" /><br />
-                <p *ngIf="!valid.firstName" class="text-red-500 text-xs italic">your firstName is not valid</p>
-                <span class="fas fa-user"></span>
+                <input type="text"  name="firstName" formControlName="firstName" required /><br />
+                <!-- <p *ngIf="!valid.firstName" class="text-red-500 text-xs italic">your firstName is not valid</p> -->
+               <span class="text-danger" *ngIf="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required','firstName')">firstName is required</span>
                 <label>First Name</label>
               </div>
               <div class="field">
-                <input type="text"  name="lastName"  required (keyup)="onKey($event, 'lastName')"/>
-                <p *ngIf="!valid.lastName" class="text-red-500 text-xs italic">your email is not valid</p>
-                <span class="fas fa-user"></span>
+                <input type="text"  name="lastName" formControlName="lastName"  required />
+                <!-- <p *ngIf="!valid.lastName" class="text-red-500 text-xs italic">your email is not valid</p> -->
+                <span class="text-danger" *ngIf="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required','firstName')">firstName is required</span>
                 <label>Last Name</label>
               </div>
               <div class="field">
-                <input type="email"   name="email" placeholder="Email"required (keyup)="onKey($event, 'email')" />
-                <p *ngIf="!valid.email" class="text-red-500 text-xs italic">your email is not valid</p>
-                <span class="fas fa-user"></span>
+                <input type="email"   name="email" formControlName="email"  placeholder="Email"required  />
+                <!-- <p *ngIf="!valid.email" class="text-red-500 text-xs italic">your email is not valid</p> -->
+                <span class="text-danger" *ngIf="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required','firstName')">firstName is required</span>
                 
               </div>
               <div class="field">
-                <input type="password"   name="password" required (keyup)="onKey($event, 'password')"/>
+                <input type="password"   name="password" formControlName="password"  required />
                 <br>
                 <span class="fas fa-lock"></span>
+                <span class="text-danger" *ngIf="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required','firstName')">firstName is required</span>
                 <br />
-                <p *ngIf="!valid.password" class="text-red-500 text-xs italic"><br/>your password is not valid</p>
+                <!-- <p *ngIf="!valid.password" class="text-red-500 text-xs italic"><br/>your password is not valid</p> -->
                 <label>Password</label>
               </div>
               <div class="field">
-                <input type="confirmPassword"  name="confirmPassword" required (keyup)="onKey($event, 'confirmPassword')"/>
-                
+                <input type="confirmPassword"  name="confirmPassword"  formControlName="confirmPassword" required />
+                <span class="text-danger" *ngIf="signUpForm.controls['firstName'].dirty && signUpForm.hasError('required','firstName')">firstName is required</span>
                 <span class="fas fa-lock"></span>
                 <label>Confirm Password</label>
               </div>

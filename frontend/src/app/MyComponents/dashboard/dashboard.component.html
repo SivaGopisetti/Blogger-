@@ -1,32 +1,78 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Blogger</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <a class=""navbar-brand routerLink="/add-blog">Add Blog</a>
+<!-- navbar -->
+<header>
+	<nav>
+		<div class="logo">
+			<a href="#">BLOGS</a>
+		</div>
+		<ul class="nav-links">
+			<li><a href="#">Home</a></li>
+			<li><a routerLink="/add-blog">Add Blog</a></li>
+		</ul>
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+	</nav>
 
-  <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div> -->
-</nav>
+	<!-- scroll indicator -->
+	<div class="progress-bar"></div>
+</header>
 
+<!-- home page - typewriter effect -->
+<section>
+	<div class="landing-page">
+		<div class="typewriter-text-container">
+			<span class="landing-page-text" id="typewriter-text"></span>
+			<span class="landing-page-text blink">|</span>
+		</div>
+		<a href="#home-card-wrapper">
+			<span></span>
+			<span></span>
+			<span></span>
+		</a>
+	</div>
+</section>
 
-<br>
-<br>
-
-
-<div class="container">
-  <div class="column">
-<div class="mb-2">
-  <label for="exampleFormControlInput1" class="form-label">Title</label>
-  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Title">
+<!-- homepage cards -->
+<div class="home-card-wrapper" id="home-card-wrapper">
+	<div class="home-card-container">
+		<div class="home-card">
+			<img src="https://picsum.photos/id/1050/1000" alt="img 1">
+			<div class="home-card-body">
+				<h3>Generic Heading</h3>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem saepe animi laudantium repellendus provident repudiandae assumenda dignissimos minima sequi voluptatibus!</p>
+				<a href="#">
+					Learn More
+				</a>
+			</div>
+		</div>
+		<div class="home-card">
+			<img src="https://picsum.photos/id/1002/1000" alt="img 2">
+			<div class="home-card-body">
+				<h3>Generic Heading</h3>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem saepe animi laudantium repellendus provident repudiandae assumenda dignissimos minima sequi voluptatibus!</p>
+				<a href="#">
+					Learn More
+				</a>
+			</div>
+		</div>
+		<div class="home-card">
+			<img src="https://picsum.photos/id/1070/1000" alt="img 3">
+			<div class="home-card-body">
+				<h3>Generic Heading</h3>
+				<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Autem saepe animi laudantium repellendus provident repudiandae assumenda dignissimos minima sequi voluptatibus!</p>
+				<a href="#">
+					Learn More
+				</a>
+			</div>
+		</div>
+	</div>
 </div>
-<div class="mb-3">
-  <label for="exampleFormControlTextarea1" class="form-label">Content</label>
-  <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-</div>
-</div>
-</div>
+
+<!-- footer -->
+<footer>
+	<div class="footer-container">
+		<div class="footer-info">Copyright &copy; @2021.</div>
+	</div>
+</footer>

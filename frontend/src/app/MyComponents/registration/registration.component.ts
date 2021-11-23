@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 // import { ApiService } from 'src/app/shared/api.service';
+import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-registration',
@@ -8,71 +10,20 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./registration.component.css']
 })
 export class RegistrationComponent implements OnInit {
-firstName='';
-  lastName='';
-  email='';
-  password="";
-  confirmPassword="";
-  valid={
-    firstName:true,
-    lastName:true,
-    email:true,
-    password:true,
-    confirmPassword:true,
+
+ public signUpForm !:FormGroup;
+
+  constructor(private fb:FormBuilder,private router:Router) { }
+
+  ngOnInit():void {
+    this.signUpForm=this.fb.group({
+      firstName:['',Validators.required],
+      lastName:['',Validators.required],
+      email:['',Validators.compose([Validators.required,Validators.email])],
+      password:['',Validators.required],
+      confirmPassword:['',Validators.required]
+    })
   }
+}
 
-  constructor() { }
-
-  ngOnInit():void {}
-
-    validate(type: string): void {
-      const firstNamePattern = /^[\w-.]*$/;
-      const laststNamePattern = /^[\w-.]*$/;
-      const emailPattern = /\S+@\S+\.\S+/;
-  
-      if (type === 'firstName') {
-        if (this.firstName.length < 5) {
-          this.valid.firstName= false;
-        } else {
-          this.valid.firstName = firstNamePattern.test(this.firstName);
-        }
-      } else if (type === 'lastName') {
-        if (this.firstName.length < 5) {
-          this.valid.firstName= false;
-        } else {
-          this.valid.firstName = laststNamePattern.test(this.firstName);
-        }
-      } 
-      else if (type === 'emai') {
-        this.valid.email = emailPattern.test(this.email);
-      } else if (type === ('confirmPassword' || 'password')) {
-        if (this.password !== this.confirmPassword) {
-          this.valid.password = false;
-        } else {
-          this.valid.password = true;
-        }
-      }
-    }
-  
-    onKey(event: any, type: string) {
-      if (type === 'firstName') {
-        this.firstName = event.target.value;
-      } else if (type === 'laststName') {
-        this.firstName = event.target.value;
-      } else if (type === 'email') {
-        this.email = event.target.value;
-      } else if (type === 'password') {
-        this.password = event.target.value;
-      } else if (type === 'confirmPassword') {
-        this.confirmPassword = event.target.value;
-      }
-      this.validate(type);
-    }
-  }
-//  registrationForm(){
-//    this.api.registration(this.registrationForm.value)
-//    .subscribe(res=>){
-//      alert{resizeBy.message}
-//      this.registrationForm.reset()
-//    }
-//  }
+    
