@@ -9,35 +9,35 @@ import {map} from 'rxjs/operators'
 })
 export class ApiService {
 
-  public registrationApiUrl:string =""
+  public loginApiUrl:string =" "
 
-  constructor(private _http:HttpClient) { }
+  constructor( private _http:HttpClient) { }
 
   PostBlog(data:any){
-    return this._http.post<any>("http:localhost:3000/posts",data)
+    return this._http.post<any>("",data)
     .pipe(map((res:any)=>{
       return res;
     }))
   }
   DeleteBlog(Id:number){
-    return this._http.delete<any>("http:localhost:3000/posts"+Id)
+    return this._http.delete<any>(""+Id)
     .pipe(map((res:any)=>{
       return res;
     }))
   }
   UpdateBlog(Id:number,data:any){
-    return this._http.put<any>("http:localhost:3000/posts"+Id,data)
+    return this._http.put<any>(""+Id,data)
     .pipe(map((res:any)=>{
       return res;
     }))
   }
   GetBlog(Id:number,data:any){
-    return this._http.get<any>("http:localhost:3000/posts"+Id,data)
+    return this._http.get<any>(""+Id,data)
     .pipe(map((res:any)=>{
       return res;
     }))
   }
-  registration(userObj:any){
-    return this._http.post<any>(`${this.loginApiUrl}registration`,userObj)
+  signUp(userObj:any){
+    return this._http.post<any>(`${this.loginApiUrl}signUp`,userObj)
   }
 }

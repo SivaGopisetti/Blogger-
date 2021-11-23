@@ -9,7 +9,8 @@ import { RegistrationComponent } from './MyComponents/registration/registration.
 import { ForgotPasswordComponent } from './MyComponents/forgot-password/forgot-password.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DashboardComponent } from './MyComponents/dashboard/dashboard.component';
-
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { ApiService } from './shared/api.service';
 
 
 
@@ -29,9 +30,10 @@ import { DashboardComponent } from './MyComponents/dashboard/dashboard.component
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
