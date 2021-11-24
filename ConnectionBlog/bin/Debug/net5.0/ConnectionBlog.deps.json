@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "ConnectionBlog/1.0.0": {
+        "runtime": {
+          "ConnectionBlog.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ConnectionBlog/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

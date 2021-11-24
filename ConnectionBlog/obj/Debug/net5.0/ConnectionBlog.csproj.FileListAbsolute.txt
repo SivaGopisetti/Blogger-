@@ -1,0 +1,11 @@
+C:\Users\skakaraparti\source\repos\Blogger__Application\ConnectionBlog\bin\Debug\net5.0\ConnectionBlog.deps.json
+C:\Users\skakaraparti\source\repos\Blogger__Application\ConnectionBlog\bin\Debug\net5.0\ConnectionBlog.dll
+C:\Users\skakaraparti\source\repos\Blogger__Application\ConnectionBlog\bin\Debug\net5.0\ref\ConnectionBlog.dll
+C:\Users\skakaraparti\source\repos\Blogger__Application\ConnectionBlog\bin\Debug\net5.0\ConnectionBlog.pdb
+C:\Users\skakaraparti\source\repos\Blogger__Application\ConnectionBlog\obj\Debug\net5.0\ConnectionBlog.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\skakaraparti\source\repos\Blogger__Application\ConnectionBlog\obj\Debug\net5.0\ConnectionBlog.AssemblyInfoInputs.cache
+C:\Users\skakaraparti\source\repos\Blogger__Application\ConnectionBlog\obj\Debug\net5.0\ConnectionBlog.AssemblyInfo.cs
+C:\Users\skakaraparti\source\repos\Blogger__Application\ConnectionBlog\obj\Debug\net5.0\ConnectionBlog.csproj.CoreCompileInputs.cache
+C:\Users\skakaraparti\source\repos\Blogger__Application\ConnectionBlog\obj\Debug\net5.0\ConnectionBlog.dll
+C:\Users\skakaraparti\source\repos\Blogger__Application\ConnectionBlog\obj\Debug\net5.0\ref\ConnectionBlog.dll
+C:\Users\skakaraparti\source\repos\Blogger__Application\ConnectionBlog\obj\Debug\net5.0\ConnectionBlog.pdb

@@ -1,0 +1,14 @@
+C:\Users\skakaraparti\source\repos\Blogger__Application\Blog_repo\bin\Debug\net5.0\Blog_repo.deps.json
+C:\Users\skakaraparti\source\repos\Blogger__Application\Blog_repo\bin\Debug\net5.0\Blog_repo.dll
+C:\Users\skakaraparti\source\repos\Blogger__Application\Blog_repo\bin\Debug\net5.0\ref\Blog_repo.dll
+C:\Users\skakaraparti\source\repos\Blogger__Application\Blog_repo\bin\Debug\net5.0\Blog_repo.pdb
+C:\Users\skakaraparti\source\repos\Blogger__Application\Blog_repo\bin\Debug\net5.0\ConnectionBlog.dll
+C:\Users\skakaraparti\source\repos\Blogger__Application\Blog_repo\bin\Debug\net5.0\ConnectionBlog.pdb
+C:\Users\skakaraparti\source\repos\Blogger__Application\Blog_repo\obj\Debug\net5.0\Blog_repo.csproj.AssemblyReference.cache
+C:\Users\skakaraparti\source\repos\Blogger__Application\Blog_repo\obj\Debug\net5.0\Blog_repo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\skakaraparti\source\repos\Blogger__Application\Blog_repo\obj\Debug\net5.0\Blog_repo.AssemblyInfoInputs.cache
+C:\Users\skakaraparti\source\repos\Blogger__Application\Blog_repo\obj\Debug\net5.0\Blog_repo.AssemblyInfo.cs
+C:\Users\skakaraparti\source\repos\Blogger__Application\Blog_repo\obj\Debug\net5.0\Blog_repo.csproj.CoreCompileInputs.cache
+C:\Users\skakaraparti\source\repos\Blogger__Application\Blog_repo\obj\Debug\net5.0\Blog_repo.dll
+C:\Users\skakaraparti\source\repos\Blogger__Application\Blog_repo\obj\Debug\net5.0\ref\Blog_repo.dll
+C:\Users\skakaraparti\source\repos\Blogger__Application\Blog_repo\obj\Debug\net5.0\Blog_repo.pdb
