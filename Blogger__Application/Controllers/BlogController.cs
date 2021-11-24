@@ -49,16 +49,10 @@ namespace Blog.Controller
         }
         //forget
         [HttpGet, Route("api/BlogController/ForgotPassword")]
-        public bool ForgotPasswordClass(ForgotPasswordClass forgotPasswordClass)
+        public string ForgotPasswordClass(String _email)
         {
-            if(_register.ForgotPassword(forgotPasswordClass))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return _register.ForgotPassword(_email);
+           
         }
         //insert
         [HttpPost, Route("api/BlogController/InsertDataTitleAndContent")]
@@ -146,7 +140,19 @@ namespace Blog.Controller
                 return false;
             }
         }
+        [HttpPut, Route("api/BlogController/EditingAllTheFieldOfUserClass")]
+        public bool EditingTheUserDetails(EditingAllTheFieldOfUserClass editingAllTheFieldOfUserClass)
+        {
+            if (_register.EditingTheUserDetails(editingAllTheFieldOfUserClass))
+            {
+                return true;
 
+            }
+            else
+            {
+                return false;
+            }
+        }
 
     }
 }

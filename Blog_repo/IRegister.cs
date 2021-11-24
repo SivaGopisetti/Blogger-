@@ -10,7 +10,7 @@ namespace Blog_repo
         bool Registration(BlogModelClass blogRegister);
 
         bool Login(LoginClass loginClass);
-        bool ForgotPassword(ForgotPasswordClass forgotPasswordClass);
+        string ForgotPassword(string  _email);
         bool InsertDataTitleAndContent(InsertTitleAndContentClass insertTitleAndContentClass);
          bool DeleteUserById( DeletingUserByGivingIdClass deletingUserByGivingId);
         bool UpdateBlogWithContentAndTitle(UpdateContentAndTitleClass updateContentAndTitleClass);
@@ -18,5 +18,6 @@ namespace Blog_repo
         bool GettingBlogById(GettingBlogByUsingIdClass gettingBlogByUsingIdClass);
         IEnumerable<BlogModelClass> GettingUserDetails();
         bool ResetPassword(ResettingThePasswordClass resettingThePasswordClass);
+        bool EditingTheUserDetails(EditingAllTheFieldOfUserClass editingAllTheFieldOfUserClass);
     }
 }

@@ -87,27 +87,19 @@ namespace Blog_repo
             return isSuccess;
         }
         //forgot password
-        public bool ForgotPassword(ForgotPasswordClass forgotPasswordClass)
+        public string ForgotPassword(string _email)
         {
-            bool isSuccess = false;
+            
+            string _password = "";
 
             try
             {
-                using (_command = new SqlCommand($"UPDATE dbo.RegistrationPage SET UserPassword= '" + forgotPasswordClass.UserPassword + "',ConfirmPassword='" + forgotPasswordClass.ConfirmPassword + "' WHERE  EmailId='" + forgotPasswordClass.EmailId + "'", _connection))
+                using (_command = new SqlCommand($"select ConfirmPassword from dbo.RegistrationPage WHERE  EmailId='" + _email+ "'", _connection))
                 {
+
                     if (_connection.State == System.Data.ConnectionState.Closed)
                         _connection.Open();
-
-                    SqlDataReader reader = _command.ExecuteReader();
-
-                    while (reader.Read())
-                    {
-                        if (forgotPasswordClass.EmailId.Equals(reader[3]))
-                        {
-                            isSuccess = true;
-                        }
-                    }
-
+                    _password = Convert.ToString(_command.ExecuteScalar());
                 }
             }
             catch (Exception ex)
@@ -119,7 +111,8 @@ namespace Blog_repo
                 if (_connection.State == System.Data.ConnectionState.Open)
                     _connection.Close();
             }
-            return isSuccess;
+            return _password;
+          
         }
         //insert data and title
         public bool InsertDataTitleAndContent(InsertTitleAndContentClass insertTitleAndContentClass)
@@ -347,6 +340,36 @@ namespace Blog_repo
                 if (_connection.State == System.Data.ConnectionState.Open)
                     _connection.Close();
             }
+            return isSuccess;
+        }
+        public bool EditingTheUserDetails(EditingAllTheFieldOfUserClass editingAllTheFieldOfUserClass)
+        {
+            bool isSuccess = false;
+            try
+            {
+               
+                    using(_command=new SqlCommand("update RegistrationPage Set FirstName='" +
+                    editingAllTheFieldOfUserClass.FirstName + "',LastName='" + editingAllTheFieldOfUserClass.LastName + "',EmailId ='" + editingAllTheFieldOfUserClass.EmailId + "',UserPassword='" +
+                     editingAllTheFieldOfUserClass.Password + "',ConfirmPassword='" + editingAllTheFieldOfUserClass.ConfirmPassword + "' Where Id='" + editingAllTheFieldOfUserClass.Id + "'", _connection))
+                    {
+                    if (_connection.State == System.Data.ConnectionState.Closed)
+                        _connection.Open();
+
+                    _command.ExecuteNonQuery();
+
+                    isSuccess = true;
+                    }
+            }
+            catch (Exception ex)
+            {
+                throw new BlogException(ex.Message, ex);
+            }
+            finally
+            {
+                if (_connection.State == System.Data.ConnectionState.Open)
+                    _connection.Close();
+            }
+
             return isSuccess;
         }
 

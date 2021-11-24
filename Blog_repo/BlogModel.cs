@@ -21,9 +21,7 @@
     public class ForgotPasswordClass
     {
         public string EmailId { get; set; }
-        public string UserPassword { get; set; }
-        public string ConfirmPassword { get; set; }
-
+        
     }
     public class InsertTitleAndContentClass
     {
@@ -61,6 +59,17 @@
     {
         public string EmailId { get; set; }
         public string Password { get; set; }
+    }
+    public class EditingAllTheFieldOfUserClass
+    {
+        public string EmailId { get; set; }
+
+        public string Password { get; set; }
+        public int Id { get; set; }
+        public string ConfirmPassword { get; set; }
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 
 }
