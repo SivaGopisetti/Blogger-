@@ -128,9 +128,15 @@ namespace Blog.Controller
         }
         //GettingUserDetailsOfTheBlogClass
         [HttpGet, Route("api/BlogController/GettingUserDetailsOfTheBlogClass")]
-        public bool GettingUserDetails(GettingUserDetailsOfTheBlogClass gettingUserDetailsOfTheBlogClass)
+        public IEnumerable<BlogModelClass> GettingUserDetails()
         {
-            if (_register.GettingUserDetails(gettingUserDetailsOfTheBlogClass))
+            return _register.GettingUserDetails();
+        }
+        //ResettingThePasswordClass
+        [HttpPatch, Route("api/BlogController/ResettingThePasswordClass")]
+        public bool ResetPassword(ResettingThePasswordClass resettingThePasswordClass)
+        {
+            if (_register.ResetPassword(resettingThePasswordClass))
             {
                 return true;
 

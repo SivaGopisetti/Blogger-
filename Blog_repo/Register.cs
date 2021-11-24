@@ -285,14 +285,46 @@ namespace Blog_repo
             return isSuccess;
         }
         //gettingUserDetailsOfTheBlogClass
-        public bool GettingUserDetails(GettingUserDetailsOfTheBlogClass gettingUserDetailsOfTheBlogClass)
+        public IEnumerable<BlogModelClass> GettingUserDetails()
+        {
+            List<BlogModelClass> list = new List<BlogModelClass>();
+
+            try
+            {
+                using (_command = new SqlCommand("SELECT FirstName,LastName,Id FROM dbo.RegistrationPage where Id>0", _connection))
+                
+                {
+                    if (_connection.State == System.Data.ConnectionState.Closed)
+                        _connection.Open();
+
+                    SqlDataReader reader = _command.ExecuteReader();
+                    while (reader?.Read() ?? false)
+                        list.Add(new BlogModelClass()
+                        { FirstName = reader.GetString(0), LastName = reader.GetString(1) });
+
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new BlogException(ex.Message, ex);
+            }
+            finally
+            {
+                if (_connection.State == System.Data.ConnectionState.Open)
+                    _connection.Close();
+            }
+            return list;
+        }
+        //
+        public bool ResetPassword(ResettingThePasswordClass resettingThePasswordClass)
         {
             bool isSuccess = false;
 
             try
             {
-                using (_command = new SqlCommand("SELECT FirstName,LastName,EmailId ,Id FROM dbo.RegistrationPage where Id='" + gettingUserDetailsOfTheBlogClass.id + "' ", _connection))
-                
+                using (_command = new SqlCommand("Update dbo.RegistrationPage set  ConfirmPassword='" + resettingThePasswordClass.Password + "'  where EmailId='" + resettingThePasswordClass.EmailId + "' ", _connection))
                 {
                     if (_connection.State == System.Data.ConnectionState.Closed)
                         _connection.Open();

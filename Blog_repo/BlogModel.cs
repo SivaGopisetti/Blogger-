@@ -52,9 +52,15 @@
     }
     public class GettingUserDetailsOfTheBlogClass
     {
-
+        public string Title { get; set; }
+        public string Content { get; set; }
         public int id { get; set; }
 
+    }
+    public class ResettingThePasswordClass
+    {
+        public string EmailId { get; set; }
+        public string Password { get; set; }
     }
 
 }

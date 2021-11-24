@@ -16,7 +16,7 @@ namespace Blog_repo
         bool UpdateBlogWithContentAndTitle(UpdateContentAndTitleClass updateContentAndTitleClass);
         bool DeleteBlogById(DeletingBlogByGivingIdClass deletingBlogByGivingIdClass);
         bool GettingBlogById(GettingBlogByUsingIdClass gettingBlogByUsingIdClass);
-        bool GettingUserDetails(GettingUserDetailsOfTheBlogClass gettingUserDetailsOfTheBlogClass);
-
+        IEnumerable<BlogModelClass> GettingUserDetails();
+        bool ResetPassword(ResettingThePasswordClass resettingThePasswordClass);
     }
 }
