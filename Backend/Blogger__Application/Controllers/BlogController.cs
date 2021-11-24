@@ -49,16 +49,10 @@ namespace Blog.Controller
         }
         //forget
         [HttpGet, Route("api/BlogController/ForgotPassword")]
-        public bool ForgotPasswordClass(ForgotPasswordClass forgotPasswordClass)
+        public string ForgotPasswordClass(String _email)
         {
-            if(_register.ForgotPassword(forgotPasswordClass))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
+            return _register.ForgotPassword(_email);
+           
         }
         //insert
         [HttpPost, Route("api/BlogController/InsertDataTitleAndContent")]
@@ -73,6 +67,93 @@ namespace Blog.Controller
                 return false;
             }
         }
+        [HttpDelete, Route("api/BlogController/DeletingUserByGivingIdClass")]
+        public bool DeletingUserByGivingIdClass(DeletingUserByGivingIdClass deletingUserByGivingId)
+        {
+            if (_register.DeleteUserById(deletingUserByGivingId))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //Update Content And Title
+        [HttpGet, Route("api/BlogController/UpdateContentAndTitleClass")]
+        public bool UpdateBlogWithContentAndTitle(UpdateContentAndTitleClass updateContentAndTitleClass)
+        {
+            if(_register.UpdateBlogWithContentAndTitle(updateContentAndTitleClass))
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //Deleting Blog Id
+        [HttpDelete, Route("api/BlogController/DeletingBlogByGivingIdClass")]
+        public bool DeleteBlogById(DeletingBlogByGivingIdClass deletingBlogByGivingIdClass)
+        {
+            if (_register.DeleteBlogById(deletingBlogByGivingIdClass))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //get blog by id
+        [HttpGet, Route("api/BlogController/GettingBlogByUsingIdClass")]
+        public bool GettingBlogById(GettingBlogByUsingIdClass gettingBlogByUsingIdclass)
+        {
+            if (_register.GettingBlogById(gettingBlogByUsingIdclass))
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+        //GettingUserDetailsOfTheBlogClass
+        [HttpGet, Route("api/BlogController/GettingUserDetailsOfTheBlogClass")]
+        public IEnumerable<BlogModelClass> GettingUserDetails()
+        {
+            return _register.GettingUserDetails();
+        }
+        //ResettingThePasswordClass
+        [HttpPatch, Route("api/BlogController/ResettingThePasswordClass")]
+        public bool ResetPassword(ResettingThePasswordClass resettingThePasswordClass)
+        {
+            if (_register.ResetPassword(resettingThePasswordClass))
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+        [HttpPut, Route("api/BlogController/EditingAllTheFieldOfUserClass")]
+        public bool EditingTheUserDetails(EditingAllTheFieldOfUserClass editingAllTheFieldOfUserClass)
+        {
+            if (_register.EditingTheUserDetails(editingAllTheFieldOfUserClass))
+            {
+                return true;
+
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }
 
