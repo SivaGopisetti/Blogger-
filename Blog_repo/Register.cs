@@ -284,13 +284,14 @@ namespace Blog_repo
             }
             return isSuccess;
         }
+        //gettingUserDetailsOfTheBlogClass
         public bool GettingUserDetails(GettingUserDetailsOfTheBlogClass gettingUserDetailsOfTheBlogClass)
         {
             bool isSuccess = false;
 
             try
             {
-                using (_command = new SqlCommand("SELECT * FROM dbo.InsertTableForTitleAndContent where Id='" + gettingUserDetailsOfTheBlogClass.id + "' ", _connection))
+                using (_command = new SqlCommand("SELECT FirstName,LastName,EmailId ,Id FROM dbo.RegistrationPage where Id='" + gettingUserDetailsOfTheBlogClass.id + "' ", _connection))
                 
                 {
                     if (_connection.State == System.Data.ConnectionState.Closed)
